@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html {{ HTML_ATTRS }}>
+  <!--<![endif]-->
+
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        * {
+            font-family: 'Space Grotesk';
+        }
+    </style>
+  </head>
+
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+</html>
