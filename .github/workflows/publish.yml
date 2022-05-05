@@ -23,5 +23,5 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USER}}
           password: ${{secrets.PASSWORD}}
-          source: "dist/*, static"
+          source: "dist/*.*, static"
           target: "app/valimohebbi.com/html/"
