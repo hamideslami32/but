@@ -4,8 +4,8 @@
 
 <script>
 export default {
-  name: 'ShareBtn',
-}
+	name: "ShareBtn",
+};
 </script>
 
 <style lang="scss" scoped>

@@ -33,61 +33,61 @@
 
 <script>
 export default {
-  name: 'Footer',
-  data() {
-    return {
-      knowMoreItems: [
-        {
-          id: 0,
-          title: 'Spotify',
-          href: '/',
-        },
-        {
-          id: 1,
-          title: 'Last.fm',
-          href: '/',
-        },
-      ],
-      menuItems: [
-        {
-          id: 0,
-          title: 'Email',
-          href: '/',
-        },
-        {
-          id: 1,
-          title: 'Linkdin',
-          href: '/',
-        },
-        {
-          id: 2,
-          title: 'Dribble',
-          href: '/graphic',
-        },
-        {
-          id: 3,
-          title: 'Behance',
-          href: '/',
-        },
-        {
-          id: 4,
-          title: 'Medium',
-          href: '/',
-        },
-        {
-          id: 5,
-          title: 'Researchgate',
-          href: '/',
-        },
-        {
-          id: 6,
-          title: 'Google Scholar',
-          href: '/',
-        },
-      ],
-    }
-  },
-}
+	name: "Footer",
+	data() {
+		return {
+			knowMoreItems: [
+				{
+					id: 0,
+					title: "Spotify",
+					href: "/",
+				},
+				{
+					id: 1,
+					title: "Last.fm",
+					href: "/",
+				},
+			],
+			menuItems: [
+				{
+					id: 0,
+					title: "Email",
+					href: "/",
+				},
+				{
+					id: 1,
+					title: "Linkdin",
+					href: "/",
+				},
+				{
+					id: 2,
+					title: "Dribble",
+					href: "/graphic",
+				},
+				{
+					id: 3,
+					title: "Behance",
+					href: "/",
+				},
+				{
+					id: 4,
+					title: "Medium",
+					href: "/",
+				},
+				{
+					id: 5,
+					title: "Researchgate",
+					href: "/",
+				},
+				{
+					id: 6,
+					title: "Google Scholar",
+					href: "/",
+				},
+			],
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>

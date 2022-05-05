@@ -19,23 +19,23 @@
 
 <script>
 export default {
-  name: 'Title',
-  props: {
-    description: {
-      type: String,
-      default: '',
-    },
-    pageTitle: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      goBack: 'Back To Home',
-    }
-  },
-}
+	name: "Title",
+	props: {
+		description: {
+			type: String,
+			default: "",
+		},
+		pageTitle: {
+			type: String,
+			default: "",
+		},
+	},
+	data() {
+		return {
+			goBack: "Back To Home",
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>

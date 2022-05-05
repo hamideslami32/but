@@ -108,16 +108,16 @@
 
 <script>
 export default {
-  data() {
-    return {
-      description: 'Lets Know More Each Others ;)',
-      pageTitle: 'contact .',
-      contentDescription:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Ut tellus elementum sagittis vitae et leo duis ut diam. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Eu facilisis sed odio morbi quis commodo odio. Fringilla urna porttitor rhoncus dolor purus non enim praesent.',
-      address: 'Tehran-IRAN',
-    }
-  },
-}
+	data() {
+		return {
+			description: "Lets Know More Each Others ;)",
+			pageTitle: "contact .",
+			contentDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Ut tellus elementum sagittis vitae et leo duis ut diam. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Eu facilisis sed odio morbi quis commodo odio. Fringilla urna porttitor rhoncus dolor purus non enim praesent.",
+			address: "Tehran-IRAN",
+		};
+	},
+};
 </script>
 <style lang="scss" scoped>
 .contact-us {

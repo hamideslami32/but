@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: 'ShareNavbarBtn',
-  props: {
-    item: {
-      type: Object,
-      default: () => {},
-    },
-  },
-}
+	name: "ShareNavbarBtn",
+	props: {
+		item: {
+			type: Object,
+			default: () => {},
+		},
+	},
+};
 </script>
 
 <style scoped>

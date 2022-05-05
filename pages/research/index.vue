@@ -22,44 +22,44 @@
 
 <script>
 export default {
-  name: 'Research',
-  data() {
-    return {
-      description: 'My Research Passion.',
-      pageTitle: 'Research .',
-      contents: [
-        {
-          title: 'Published',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Under Review',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Conference',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Master thesis',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Interests',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Book translating',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-          title: 'Journal',
-          desc: '_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-      ],
-    }
-  },
-}
+	name: "Research",
+	data() {
+		return {
+			description: "My Research Passion.",
+			pageTitle: "Research .",
+			contents: [
+				{
+					title: "Published",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Under Review",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Conference",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Master thesis",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Interests",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Book translating",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+				{
+					title: "Journal",
+					desc: "_is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe software like Aldus PageMaker including versions of Lorem Ipsum.",
+				},
+			],
+		};
+	},
+};
 </script>
 <style lang="scss" scoped>
 .research {

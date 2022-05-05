@@ -51,15 +51,15 @@
 
 <script>
 export default {
-  name: 'AboutUs',
-  data() {
-    return {
-      description: 'Who is the Vali(me:)?',
-      pageTitle: 'About .',
-      avatar: '/image/og/og@3x.png',
-    }
-  },
-}
+	name: "AboutUs",
+	data() {
+		return {
+			description: "Who is the Vali(me:)?",
+			pageTitle: "About .",
+			avatar: "/image/og/og@3x.png",
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>

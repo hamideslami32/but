@@ -17,44 +17,44 @@
 
 <script>
 export default {
-  name: 'Header',
-  data() {
-    return {
-      navbarLinks: [
-        {
-          id: 0,
-          title: 'Product',
-          href:'/'
-        },
-        {
-          id: 1,
-          title: 'Ux',
-          href:'/'
-        },
-        {
-          id: 2,
-          title: 'Graphic',
-          href:'/graphic'
-        },
-        {
-          id: 3,
-          title: 'Research',
-          href:'/research'
-        },
-        {
-          id: 4,
-          title: 'CV',
-          href:'/about'
-        },
-        {
-          id: 5,
-          title: 'Contact',
-          href:'/contact'
-        },
-      ],
-    }
-  },
-}
+	name: "Header",
+	data() {
+		return {
+			navbarLinks: [
+				{
+					id: 0,
+					title: "Product",
+					href:"/"
+				},
+				{
+					id: 1,
+					title: "Ux",
+					href:"/"
+				},
+				{
+					id: 2,
+					title: "Graphic",
+					href:"/graphic"
+				},
+				{
+					id: 3,
+					title: "Research",
+					href:"/research"
+				},
+				{
+					id: 4,
+					title: "CV",
+					href:"/about"
+				},
+				{
+					id: 5,
+					title: "Contact",
+					href:"/contact"
+				},
+			],
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
