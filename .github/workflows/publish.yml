@@ -17,10 +17,8 @@ jobs:
         uses: bahmutov/npm-install@v1.6.0
       - name: Building
         run: npm run build
-      - name: rename dist html
-        run: |
-          mv dist html
-          cp static html
+      - name: rename dist to html 
+        run: mv dist html
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
