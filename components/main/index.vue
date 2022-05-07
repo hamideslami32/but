@@ -28,8 +28,6 @@ export default {};
   background-position: center;
   background-size: cover;
   &__content {
-    width: 45%;
-    height: 40%;
     margin-bottom: 100px;
     color: rgb(56, 55, 55);
     &__title {
@@ -55,7 +53,7 @@ export default {};
       height: 40%;
       color: rgb(56, 55, 55);
       &__title {
-        font-size: 80px;
+        font-size: 40px;
         font-weight: 500;
       }
       &__description {
