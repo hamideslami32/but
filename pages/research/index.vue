@@ -1,7 +1,6 @@
 <template>
   <div class="research">
     <ShareTitle :description="description" :page-title="pageTitle" />
-    <span class="research__title">Topics:</span>
     <div class="research__content">
       <div
         v-for="(item, i) in contents"
@@ -68,10 +67,10 @@ export default {
   width: 100%;
   background-color: #fafafa;
   &__title {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 500;
     width: 100%;
-    margin: 0 100px 70px 100px;
+    padding: 0 100px 70px 100px;
     color: #707070;
   }
   &__content {
@@ -105,7 +104,7 @@ export default {
       font-size: 14px;
       font-weight: 500;
       width: 100%;
-      margin: 0 16px 24px 16px;
+      padding: 0 16px 24px 16px;
       color: #707070;
     }
     &__content {
