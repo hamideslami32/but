@@ -24,11 +24,6 @@ export default {
 		return {
 			navbarLinks: [
 				{
-					id: 0,
-					title: "Product",
-					href:"/"
-				},
-				{
 					id: 1,
 					title: "Ux",
 					href:"/"

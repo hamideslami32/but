@@ -110,8 +110,8 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
 	.badge {
-		width: 90px;
-		height: 40px;
+		width: 70px;
+		height: 30px;
 		border-radius: 15px;
 		background-color: #fff;
 		color: #000;
@@ -121,7 +121,7 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 18px;
+		font-size: 14px;
 	}
 	&__content {
 		width: 50%;

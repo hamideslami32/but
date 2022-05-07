@@ -28,7 +28,7 @@ export default {};
   background-position: center;
   background-size: cover;
   &__content {
-    margin-bottom: 100px;
+    margin-bottom: 300px;
     color: rgb(56, 55, 55);
     &__title {
       font-size: 80px;
@@ -43,12 +43,13 @@ export default {};
 @media only screen and (max-width: 1054px) {
   .main {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 20px;
     &__content {
+					margin-bottom: 70px;
       width: 100%;
       height: 40%;
       color: rgb(56, 55, 55);
