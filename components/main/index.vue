@@ -24,7 +24,7 @@ export default {};
   align-items: flex-end;
   justify-content: flex-start;
   padding: 0 140px 0 140px;
-  background-image: url("/image/idea.jpg");
+  background-image: url("/image/homepage-desktop.png");
   background-position: center;
   background-size: cover;
   &__content {
