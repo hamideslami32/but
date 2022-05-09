@@ -2,7 +2,7 @@
   <div class="footer">
     <span class="footer__title">Vali Mohebbi</span>
     <div class="footer__menu">
-      <ul class="footer__menu__list">
+      <ul class="footer__menu__list" v-if="menuItems.length">
         <li
           v-for="(item, i) in menuItems"
           :key="i"
@@ -11,7 +11,7 @@
           <ShareNavbarBtn :item="item" />
         </li>
       </ul>
-      <div class="footer__menu__know-more">
+      <div v-if="knowMoreItems.length" class="footer__menu__know-more">
         <div class="footer__menu__know-more__content">
           <div class="footer__menu__know-more__content__header">
             <i class="ri-heart-fill"></i>
@@ -36,57 +36,17 @@ export default {
 	name: "Footer",
 	data() {
 		return {
-			knowMoreItems: [
-				{
-					id: 0,
-					title: "Spotify",
-					href: "/",
-				},
-				{
-					id: 1,
-					title: "Last.fm",
-					href: "/",
-				},
-			],
-			menuItems: [
-				{
-					id: 0,
-					title: "Email",
-					href: "/",
-				},
-				{
-					id: 1,
-					title: "Linkdin",
-					href: "/",
-				},
-				{
-					id: 2,
-					title: "Dribble",
-					href: "/graphic",
-				},
-				{
-					id: 3,
-					title: "Behance",
-					href: "/",
-				},
-				{
-					id: 4,
-					title: "Medium",
-					href: "/",
-				},
-				{
-					id: 5,
-					title: "Researchgate",
-					href: "/",
-				},
-				{
-					id: 6,
-					title: "Google Scholar",
-					href: "/",
-				},
-			],
+			knowMoreItems: [],
+			menuItems: [],
 		};
 	},
+	async created() {
+		const d = await this.$axios.$get("/footer?populate=*");
+		const {links, spotify, lastfm} = d.data?.attributes;
+		this.menuItems = links;
+		this.knowMoreItems = [spotify, lastfm];
+
+	}
 };
 </script>
 

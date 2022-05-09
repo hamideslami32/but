@@ -1,19 +1,21 @@
 <template>
 	<div class="project-container" :style="backgroundImage">
-		<div v-if="items.newLable" class="badge">NEW</div>
+		<div v-if="item.isNew" class="badge">NEW</div>
 		<div
 			class="project-container__content"
-			:style="backgroundColor"
+			:style="{ backgroundColor: `${item.color}` }"
 			@mouseleave="handlerHover"
 			@mouseenter="handlerHover"
 		>
 			<div ref="title" class="project-container__content__text">
-				<span class="project-container__content__text__index">{{ id }}</span>
-				<span class="project-container__content__text__title">JiJi kides</span>
+				<span class="project-container__content__text__index">{{ id + 1 }}</span>
+				<span class="project-container__content__text__title">{{
+					item.title
+				}}</span>
 				<span class="project-container__content__text__description mb-4"
-					>User Experience - Human Center Design</span
+					>{{item.description}}</span
 				>
-				<ShareButton title="view project" href="/project" />
+				<ShareButton title="view project" href="/" />
 			</div>
 		</div>
 	</div>
@@ -24,7 +26,7 @@
 export default {
 	name: "ProjectsSection",
 	props: {
-		items: {
+		item: {
 			type: Object,
 			default: () => {},
 		},
@@ -47,34 +49,34 @@ export default {
 	computed: {
 		backgroundImage() {
 			return {
-				"background-image": `url(${this.items.image})`,
+				"background-image": `url(https://valimohebbi.com/strapi${this.item.bgImage.data.attributes.url})`,
 			};
 		},
-		backgroundColor() {
-			if (this.type === "home") {
-				if (this.isHovered) {
-					return {
-						"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
-					};
-				} else {
-					return {
-						"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.85)`,
-					};
-				}
-			} else if (this.type === "graphic") {
-				if (this.isHovered) {
-					return {
-						"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.9)`,
-						width: "100%",
-					};
-				} else {
-					return {
-						"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
-						width: "50%",
-					};
-				}
-			} else return "";
-		},
+		// backgroundColor() {
+		// 	if (this.type === "home") {
+		// 		if (this.isHovered) {
+		// 			return {
+		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
+		// 			};
+		// 		} else {
+		// 			return {
+		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.85)`,
+		// 			};
+		// 		}
+		// 	} else if (this.type === "graphic") {
+		// 		if (this.isHovered) {
+		// 			return {
+		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.9)`,
+		// 				width: "100%",
+		// 			};
+		// 		} else {
+		// 			return {
+		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
+		// 				width: "50%",
+		// 			};
+		// 		}
+		// 	} else return "";
+		// },
 	},
 	mounted() {
 		// this.animeInstant = anime({

@@ -1,7 +1,7 @@
 <template>
-	<a :href="item.href" class="navbar-btn">
-		<span :class="{'navbar-active': $route.path === item.href}">{{
-			item.title
+	<a :href="item.link" class="navbar-btn">
+		<span :class="{'navbar-active': $route.path === item.link}">{{
+			item.text
 		}}</span>
 	</a>
 </template>
@@ -15,10 +15,6 @@ export default {
 			default: () => {},
 		},
 	},
-	mounted() {
-		console.log(this.$route.path, this.item.href);
-		
-	}
 };
 </script>
 

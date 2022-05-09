@@ -25,28 +25,28 @@ export default {
 			navbarLinks: [
 				{
 					id: 1,
-					title: "Ux",
-					href:"/"
+					text: "Ux",
+					link:"/"
 				},
 				{
 					id: 2,
-					title: "Graphic",
-					href:"/graphic"
+					text: "Graphic",
+					link:"/graphic"
 				},
 				{
 					id: 3,
-					title: "Research",
-					href:"/research"
+					text: "Research",
+					link:"/research"
 				},
 				{
 					id: 4,
-					title: "CV",
-					href:"/about"
+					text: "CV",
+					link:"/about"
 				},
 				{
 					id: 5,
-					title: "Contact",
-					href:"/contact"
+					text: "Contact",
+					link:"/contact"
 				},
 			],
 		};
