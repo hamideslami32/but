@@ -4,11 +4,11 @@
 			<Main v-if="data"  :title="data.heroTitle" :description="data.description" />
 		</div>
 		<div
-			v-for="(item, index) in projectPages"
-			:key="`home-page-${index}`"
+			v-for="(item, i) in projectPages"
+			:key="`home-page-${i}`"
 			class="main__projects"
 		>
-			<Project :id="index" :type="'home'" :item="item" />
+			<Project :id="String(i+1)" :type="'home'" :item="item" />
 		</div>
 	</div>
 </template>

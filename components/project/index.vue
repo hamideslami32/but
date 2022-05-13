@@ -28,7 +28,7 @@ export default {
 	props: {
 		item: {
 			type: Object,
-			default: () => {},
+			required: true
 		},
 		id: {
 			type: String,
@@ -49,7 +49,7 @@ export default {
 	computed: {
 		backgroundImage() {
 			return {
-				"background-image": `url(https://valimohebbi.com/strapi${this.item.bgImage.data.attributes.url})`,
+				"background-image": `url(https://valimohebbi.com/strapi${this.item?.bgImage?.data?.attributes?.url})`,
 			};
 		},
 		// backgroundColor() {

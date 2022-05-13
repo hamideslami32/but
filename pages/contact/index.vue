@@ -1,20 +1,20 @@
 <template>
   <div class="contact-us">
-    <ShareTitle :description="description" :page-title="pageTitle" />
-    <div class="contact-us__form">
+    <ShareTitle :description="contactData.heroTitle" :page-title="pageTitle" />
+    <div class="contact-us__form" v-if="contactData">
       <div class="contact-us__form__content">
         <span class="contact-us__form__content__discription">
-          {{ contentDescription }}
+          {{ contactData.description }}
         </span>
         <div class="contact-us__form__content__info">
           <div class="contact-us__form__content__info__text">
             <span class="contact-us__form__content__info__text__title"
               >Address</span
             >
-            <span>{{ address }}</span>
+            <span>{{ contactData.address }}</span>
             <div class="contact-us__form__content__info__text__email">
-              <span>vali.mohebbi@yahoo.com</span>
-              <span>+98999999999</span>
+              <span>{{contactData.email}}</span>
+              <span>{{contactData.phone}}</span>
             </div>
           </div>
           <div class="contact-us__form__content__info__form">
@@ -110,13 +110,13 @@
 export default {
 	data() {
 		return {
-			description: "Lets Know More Each Others ;)",
-			pageTitle: "contact .",
-			contentDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Ut tellus elementum sagittis vitae et leo duis ut diam. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Eu facilisis sed odio morbi quis commodo odio. Fringilla urna porttitor rhoncus dolor purus non enim praesent.",
-			address: "Tehran-IRAN",
+			contactData: null
 		};
 	},
+	async created() {
+		const d = await this.$axios.$get("/contact");
+		this.contactData = d.data.attributes;
+	}
 };
 </script>
 <style lang="scss" scoped>
