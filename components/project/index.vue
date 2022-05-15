@@ -3,7 +3,7 @@
 		<div v-if="item.isNew" class="badge">NEW</div>
 		<div
 			class="project-container__content"
-			:style="{ backgroundColor: `${item.color}` }"
+			:style="backgroundColor"
 			@mouseleave="handlerHover"
 			@mouseenter="handlerHover"
 		>
@@ -12,9 +12,9 @@
 				<span class="project-container__content__text__title">{{
 					item.title
 				}}</span>
-				<span class="project-container__content__text__description mb-4"
-					>{{item.description}}</span
-				>
+				<span class="project-container__content__text__description mb-4">{{
+					item.description
+				}}</span>
 				<ShareButton title="view project" href="/" />
 			</div>
 		</div>
@@ -28,7 +28,7 @@ export default {
 	props: {
 		item: {
 			type: Object,
-			required: true
+			required: true,
 		},
 		id: {
 			type: String,
@@ -42,8 +42,6 @@ export default {
 	data() {
 		return {
 			isHovered: false,
-			// animeInstant: null,
-			// animationPlayed: false,
 		};
 	},
 	computed: {
@@ -52,51 +50,36 @@ export default {
 				"background-image": `url(https://valimohebbi.com/strapi${this.item?.bgImage?.data?.attributes?.url})`,
 			};
 		},
-		// backgroundColor() {
-		// 	if (this.type === "home") {
-		// 		if (this.isHovered) {
-		// 			return {
-		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
-		// 			};
-		// 		} else {
-		// 			return {
-		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.85)`,
-		// 			};
-		// 		}
-		// 	} else if (this.type === "graphic") {
-		// 		if (this.isHovered) {
-		// 			return {
-		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},0.9)`,
-		// 				width: "100%",
-		// 			};
-		// 		} else {
-		// 			return {
-		// 				"background-color": `rgba(${this.items.red},${this.items.green},${this.items.blue},1)`,
-		// 				width: "50%",
-		// 			};
-		// 		}
-		// 	} else return "";
-		// },
-	},
-	mounted() {
-		// this.animeInstant = anime({
-		//   targets: this.$refs.title,
-		//   translateX: ['-100px', '0px'],
-		//   opacity: [0, 1],
-		//   autoplay: false,
-		//   duration: 1000,
-		// })
+		backgroundColor() {
+			if (this.type === "home") {
+				if (this.isHovered) {
+					return {
+						"background-color": this.item.color,
+					};
+				} else {
+					return {
+						"background-color": `${this.item.color}80`,
+					};
+				}
+			} else if (this.type === "graphic") {
+				if (this.isHovered) {
+					return {
+						"background-color": this.item.color,
+						width: "100%",
+					};
+				} else {
+					return {
+						"background-color": `${this.item.color}80`,
+						width: "50%",
+					};
+				}
+			} else return "";
+		},
 	},
 	methods: {
 		handlerHover() {
 			this.isHovered = !this.isHovered;
 		},
-		// startAnimation(entries) {
-		//   if (!this.animationPlayed && entries[0].isIntersecting) {
-		//     this.animeInstant.play()
-		//     this.animationPlayed = true
-		//   }
-		// },
 	},
 };
 </script>
