@@ -5,18 +5,18 @@
 			<div class="about-us__container__pet">
 				<div class="about-us__container__pet__description">
 					<div class="about-us__container__pet__description__first-text">
-						<span>{{ aboutData.hero.firstText }}</span>
+						<span>{{ hero.firstText }}</span>
 						<img src="/font/arrow-back.svg" alt="arrow" />
 					</div>
 				</div>
-				<div class="about-us__container__pet__image"></div>
+				<div class="about-us__container__pet__image" :style="{BackgroundImage: `url('https://valimohebbi.com/strapi${hero.firstImage.data.attributes.url}')`}"></div>
 			</div>
 			<div class="about-us__container__avatar">
 				<div class="about-us__container__avatar__image">
-					<img :src="avatar" alt="avatar" width="100%" height="100%" />
+					<img :src="`https://valimohebbi.com/strapi${hero.secondImage.data.attributes.url}`" alt="avatar" width="100%" height="100%" />
 				</div>
 				<div class="about-us__container__avatar__description">
-					<span>{{ aboutData.hero.secondText }}</span>
+					<span>{{ hero.secondText }}</span>
 				</div>
 			</div>
 			<div class="about-us__container__info">
@@ -47,12 +47,15 @@ export default {
 		return {
 			aboutData: null,
 			pageTitle: "About .",
-			avatar: "",
+			hero: null,
 		};
 	},
 	async created() {
-		const d = await this.$axios.$get("/cv?populate=*");
-		this.aboutData = d.data?.attributes;
+		const d = await this.$axios.$get("/cv?populate[hero][populate]=*&populate[cvImages]=*");
+		const { hero, ...rest } = d.data.attributes;
+		this.aboutData = rest;
+		this.hero = hero;
+
 	},
 };
 </script>
