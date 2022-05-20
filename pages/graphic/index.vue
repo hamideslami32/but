@@ -41,7 +41,7 @@ export default {
 	&__title {
 		display: flex;
 		flex-direction: column;
-		margin: 100px 140px 0 140px;
+		// margin: 100px 140px 0 140px;
 		&__btn {
 			font-weight: 200;
 		}

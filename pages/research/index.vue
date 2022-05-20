@@ -1,7 +1,7 @@
 <template>
 	<div class="research" v-if="researchData">
 		<ShareTitle :description="researchData.heroTitle" :page-title="pageTitle" />
-		<div class="research__content">
+		<div class="research__content m-auto container">
 			<div
 				v-for="(item, i) in sections"
 				:key="i"
@@ -52,7 +52,7 @@ export default {
 	}
 	&__content {
 		color: #333;
-		margin: 0 100px 100px 100px;
+		// margin: 0 100px 100px 100px;
 
 		&__description {
 			display: flex;

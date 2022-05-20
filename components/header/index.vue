@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header container m-auto">
     <div class="header__logo">
       <a href="/">
         <span>Vali Mohebbi</span>
@@ -56,12 +56,10 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 140px 0 140px;
   &__logo {
     width: 25%;
     height: 100%;

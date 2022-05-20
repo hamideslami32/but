@@ -1,6 +1,6 @@
 <template>
 	<div class="main">
-		<div class="main__content">
+		<div class="main__content  container m-auto">
 			<span class="main__content__title">{{title}}</span>
 			<div class="main__content__description">
 				<span
@@ -31,7 +31,6 @@ export default {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
-	padding: 0 140px 0 140px;
 	background-image: url("/image/homepage-desktop.png");
 	background-position: center;
 	background-size: cover;

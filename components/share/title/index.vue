@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <div class="title__content">
+    <div class="title__content container m-auto">
       <a class="title__content__btn" href="/">
         <i class="ri-arrow-left-line"></i>
         {{ goBack }}
@@ -44,7 +44,7 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    margin: 90px 140px 0 140px;
+    // margin: 90px 140px 0 140px;
     &__btn {
       font-weight: 200;
       display: flex;

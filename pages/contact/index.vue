@@ -1,12 +1,12 @@
 <template>
-  <div class="contact-us">
+  <div class="contact-us" v-if="contactData">
     <ShareTitle :description="contactData.heroTitle" :page-title="pageTitle" />
     <div class="contact-us__form" v-if="contactData">
       <div class="contact-us__form__content">
-        <span class="contact-us__form__content__discription">
+        <div class="contact-us__form__content__description container m-auto">
           {{ contactData.description }}
-        </span>
-        <div class="contact-us__form__content__info">
+        </div>
+        <div class="contact-us__form__content__info container m-auto">
           <div class="contact-us__form__content__info__text">
             <span class="contact-us__form__content__info__text__title"
               >Address</span
@@ -21,7 +21,7 @@
             <span class="contact-us__form__content__info__form__title"
               >Get in Touch</span
             >
-            <form class="w-full max-w-sm">
+            <form class="w-full">
               <div class="md:flex md:items-center ml-2">
                 <div class="md:w-2/5 border-b border-teal-500 py-2">
                   <input
@@ -80,16 +80,14 @@
                 />
               </div>
               <div class="flex md:w-full mt-6">
-                <div class="w-1/5"></div>
                 <button
                   class="
-                    md:w-3/5
+                    md:w-2/5
                     bg-transparent
                     hover:bg-white-500
                     text-white-700
                     font-semibold
                     py-2
-                    px-4
                     border border-white-500
                     rounded
                   "
@@ -140,15 +138,14 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      &__discription {
-        margin: 0 140px 0 140px;
+      &__description {
+        // margin: 0 140px 0 140px;
         font-size: 16px;
         font-weight: 400;
         color: #fff;
       }
       &__info {
         color: #fff;
-        padding: 0 140px 0 140px;
         width: 100%;
         display: flex;
         align-items: center;

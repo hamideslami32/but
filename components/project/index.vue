@@ -8,7 +8,7 @@
 			@mouseenter="handlerHover"
 		>
 			<div ref="title" class="project-container__content__text">
-				<span class="project-container__content__text__index">{{ id + 1 }}</span>
+				<span class="project-container__content__text__index">{{ id }}</span>
 				<span class="project-container__content__text__title">{{
 					item.title
 				}}</span>
@@ -58,7 +58,7 @@ export default {
 					};
 				} else {
 					return {
-						"background-color": `${this.item.color}80`,
+						"background-color": `${this.item.color}D9`,
 					};
 				}
 			} else if (this.type === "graphic") {
@@ -69,7 +69,7 @@ export default {
 					};
 				} else {
 					return {
-						"background-color": `${this.item.color}80`,
+						"background-color": `${this.item.color}D9`,
 						width: "50%",
 					};
 				}
@@ -94,6 +94,7 @@ export default {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	
 	.badge {
 		width: 70px;
 		height: 30px;
@@ -114,12 +115,16 @@ export default {
 		display: flex;
 		align-items: center;
 		transition: 0.5s ease-in-out;
+			// position: relative;
 		&__text {
 			height: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			margin: auto;
+			margin-left: 18%;
+			// position: absolute;
+			// left: 40%
+			// margin: auto;
 			&__index {
 				font-size: 5rem;
 				font-weight: 400;

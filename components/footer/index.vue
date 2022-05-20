@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer container m-auto">
     <span class="footer__title">Vali Mohebbi</span>
     <div class="footer__menu">
       <ul class="footer__menu__list" v-if="menuItems.length">
@@ -52,10 +52,10 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  width: 100%;
+  // width: 100%;
   height: 530px;
   background-color: #fff;
-  padding: 90px 140px 0 140px;
+  // padding: 90px 140px 0 140px;
   display: flex;
   flex-direction: column;
   &__title {
