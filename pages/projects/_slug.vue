@@ -1,5 +1,5 @@
 <template>
-	<div class="project" v-if="projectData">
+	<div class="project">
 		<div class="container mx-auto">
 			<div class="project__header">
 				<a href="/"><i class="ri-arrow-left-line"></i>Back to Home</a>
@@ -119,7 +119,7 @@ export default {
 	},
 	async asyncData({ payload }) {
 		if (payload) return { projectData: payload };
-		else return false;
+		else return { projectData: {}};
 	},
 	// async created() {
 	// 	if (this.$route.params.slug) {

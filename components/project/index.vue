@@ -15,7 +15,7 @@
 				<span class="project-container__content__text__description mb-4">{{
 					item.description
 				}}</span>
-				<ShareButton title="view project" :href="`/project/${item.link ? item.link.link : '/'}`" />
+				<ShareButton title="view project" :href="`/projects/${item.link ? item.link.link : '/'}`" />
 			</div>
 		</div>
 	</div>
