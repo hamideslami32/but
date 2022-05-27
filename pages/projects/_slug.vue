@@ -118,7 +118,7 @@ export default {
 		};
 	},
 	asyncData({ payload }) {
-		if (payload) return { projectData: payload.attributes };
+		if (payload) return { projectData: payload };
 		else return { projectData: {}};
 	},
 	// async created() {
