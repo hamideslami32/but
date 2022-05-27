@@ -78,7 +78,12 @@
 				<h3>The Project Album</h3>
 			</div>
 			<div class="project__album__images">
-				<img v-for="(photo, index) in projectData.album.data" :key="index	" :src="`https://valimohebbi.com/strapi/${photo.attributes.url}`" alt="" />
+				<img
+					v-for="(photo, index) in projectData.album.data"
+					:key="index"
+					:src="`https://valimohebbi.com/strapi/${photo.attributes.url}`"
+					alt=""
+				/>
 				<!-- <img src="/image/projects/app.jpg" alt="" />
 				<img src="/image/projects/alphabet.jpg" alt="" />
 				<img src="https://via.placeholder.com/1000/008000" alt="" /> -->
@@ -92,8 +97,12 @@
 			<div class="project__footprint">
 				<span> <i class="ri-arrow-right-line"></i>&nbsp; Other Projects: </span>
 				<ul style="margin-left: 48px">
-					<li v-for="(project, index) in projectData.otherProjects" :key="`project-${index}`" class="my-4">
-						<a :href="project.link">{{project.text}}</a>
+					<li
+						v-for="(project, index) in projectData.otherProjects"
+						:key="`project-${index}`"
+						class="my-4"
+					>
+						<a :href="project.link">{{ project.text }}</a>
 					</li>
 				</ul>
 			</div>
@@ -109,8 +118,9 @@ export default {
 		};
 	},
 	async created() {
-		const d = await this.$axios.$get(
-			`/projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
+		if (this.$route.params.slug) {
+			const d = await this.$axios.$get(
+				`/projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
 			populate[sections][populate]=*&
 			populate[secondMedia][populate]=*&
 			populate[secondSections][populate]=*&
@@ -119,15 +129,10 @@ export default {
 			populate[album][populate]=*&
 			populate[otherProjects][populate]=*
 			`
-		);
-		this.projectData = d.data[0]?.attributes;
+			);
+			this.projectData = d.data[0]?.attributes;
+		}
 	},
-	validate({ params }) {
-		console.log(params);
-		return true;
-		// if (params.slug) return true;
-		// else return false;
-	}
 };
 </script>
 
@@ -245,7 +250,7 @@ export default {
 			flex-direction: column;
 			align-items: flex-start;
 			padding: 64px 160px 64px 64px;
-				text-align: justify;
+			text-align: justify;
 			h2 {
 				font-size: 60px;
 				font-weight: bold;
