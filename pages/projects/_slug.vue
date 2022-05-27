@@ -117,8 +117,8 @@ export default {
 			projectData: null,
 		};
 	},
-	async asyncData({ payload }) {
-		if (payload) return { projectData: payload };
+	asyncData({ payload }) {
+		if (payload) return { projectData: payload.attributes };
 		else return { projectData: {}};
 	},
 	// async created() {
