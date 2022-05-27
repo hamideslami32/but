@@ -9,27 +9,42 @@
 						<img src="/font/arrow-back.svg" alt="arrow" />
 					</div>
 				</div>
-				<div class="about-us__container__pet__image" :style="{BackgroundImage: `url('https://valimohebbi.com/strapi${hero.firstImage.data.attributes.url}')`}"></div>
+				<div class="about-us__container__avatar__image">
+					<img
+						:src="`https://valimohebbi.com/strapi${hero.firstImage.data.attributes.url}`"
+						alt="avatar"
+						width="100%"
+					/>
+				</div>
+
+				<!-- <div class="about-us__container__pet__image" :style="{BackgroundImage: `url('https://valimohebbi.com/strapi${hero.firstImage.data.attributes.url}')`}"></div> -->
 			</div>
 			<div class="about-us__container__avatar">
 				<div class="about-us__container__avatar__image">
-					<img :src="`https://valimohebbi.com/strapi${hero.secondImage.data.attributes.url}`" alt="avatar" width="100%" height="100%" />
+					<img
+						:src="`https://valimohebbi.com/strapi${hero.secondImage.data.attributes.url}`"
+						alt="avatar"
+						width="100%"
+					/>
 				</div>
 				<div class="about-us__container__avatar__description">
 					<span>{{ hero.secondText }}</span>
 				</div>
 			</div>
 			<div class="about-us__container__info">
-				<span class="about-us__container__info__title">{{aboutData.summaryTitle}}</span>
-				<span class="about-us__container__info__desc"
-					>{{aboutData.summary}}</span
-				>
+				<span class="about-us__container__info__title">{{
+					aboutData.summaryTitle
+				}}</span>
+				<span class="about-us__container__info__desc">{{ aboutData.summary }}</span>
 			</div>
 			<div class="about-us__container__cv">
 				<span>CV</span>
 				<div class="about-us__container__cv__content">
 					<div v-for="(image, i) in aboutData.cvImages.data" :key="i">
-						<img :src="`https://valimohebbi.com/strapi${image.attributes.url}`" :alt="`cv-image-page${i}`">
+						<img
+							:src="`https://valimohebbi.com/strapi${image.attributes.url}`"
+							:alt="`cv-image-page${i}`"
+						/>
 					</div>
 				</div>
 				<div class="about-us__container__cv__download-btn">
@@ -51,11 +66,12 @@ export default {
 		};
 	},
 	async created() {
-		const d = await this.$axios.$get("/cv?populate[hero][populate]=*&populate[cvImages]=*");
+		const d = await this.$axios.$get(
+			"/cv?populate[hero][populate]=*&populate[cvImages]=*"
+		);
 		const { hero, ...rest } = d.data.attributes;
 		this.aboutData = rest;
 		this.hero = hero;
-
 	},
 };
 </script>
@@ -110,7 +126,6 @@ export default {
 		&__avatar {
 			display: flex;
 			width: 100%;
-			height: 500px;
 			&__description {
 				width: 50%;
 				background-color: #000;
@@ -127,9 +142,9 @@ export default {
 				width: 50%;
 				height: 100%;
 				img {
-					width: auto;
+					width: 100%;
 					object-fit: cover;
-					height: 100% !important;
+					height: auto;
 				}
 			}
 		}

@@ -7,7 +7,7 @@
 				:key="`graphic-page-${index}`"
 				class="graphic__content__projects"
 			>
-				<Project :id="index+0" :item="item" :type="'graphic'" />
+				<Project :id="index+1" :item="item" :type="'graphic'" />
 			</div>
 		</div>
 	</div>
