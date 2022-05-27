@@ -110,7 +110,7 @@ export default {
 	},
 	async created() {
 		const d = await this.$axios.$get(
-			`projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
+			`/projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
 			populate[sections][populate]=*&
 			populate[secondMedia][populate]=*&
 			populate[secondSections][populate]=*&
