@@ -123,8 +123,10 @@ export default {
 		this.projectData = d.data[0]?.attributes;
 	},
 	validate({ params }) {
-		if (params.slug) return true;
-		else return false;
+		console.log(params);
+		return true;
+		// if (params.slug) return true;
+		// else return false;
 	}
 };
 </script>
