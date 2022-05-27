@@ -1,14 +1,14 @@
 <template>
 	<div class="main">
 		<div class="main__content">
-			<Main v-if="data"  :title="data.heroTitle" :description="data.description" />
+			<Main v-if="data" :title="data.heroTitle" :description="data.description" />
 		</div>
 		<div
 			v-for="(item, i) in projectPages"
 			:key="`home-page-${i}`"
 			class="main__projects"
 		>
-			<Project :id="String(i+1)" :type="'home'" :item="item" />
+			<Project :id="String(i + 1)" :type="'home'" :item="item" />
 		</div>
 	</div>
 </template>
@@ -19,14 +19,16 @@ export default {
 	data() {
 		return {
 			data: null,
-			projectPages: [],
+			projectPages: null,
 		};
 	},
-	async created() {
-		const d = await this.$axios.$get("/home?populate[projects][populate]=*");
-		const {projects, ...rest} = d.data?.attributes;
-		this.data = rest;
-		this.projectPages = projects;
+	async asyncData({ $axios }) {
+		const d = await $axios.$get("/home?populate[projects][populate]=*");
+		const { projects, ...rest } = d.data?.attributes;
+		return {
+			data: rest,
+			projectPages: projects
+		};
 	},
 };
 </script>
