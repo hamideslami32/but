@@ -112,11 +112,6 @@
 
 <script>
 export default {
-	data() {
-		return {
-			projectData: null,
-		};
-	},
 	asyncData({ payload }) {
 		if (payload) return { projectData: payload };
 		else return { projectData: {} };
