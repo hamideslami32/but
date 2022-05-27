@@ -1,5 +1,5 @@
 <template>
-	<div class="about-us" v-if="aboutData">
+	<div class="about-us">
 		<ShareTitle :description="aboutData.heroTitle" :page-title="pageTitle" />
 		<div class="about-us__container">
 			<div class="about-us__container__pet">
@@ -65,13 +65,15 @@ export default {
 			hero: null,
 		};
 	},
-	async created() {
-		const d = await this.$axios.$get(
+	async asyncData({ $axios }) {
+		const d = await $axios.$get(
 			"/cv?populate[hero][populate]=*&populate[cvImages]=*"
 		);
 		const { hero, ...rest } = d.data.attributes;
-		this.aboutData = rest;
-		this.hero = hero;
+		return {
+			aboutData: rest,
+			hero,
+		};
 	},
 };
 </script>

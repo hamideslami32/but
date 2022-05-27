@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
 		<div class="main__content">
-			<Main v-if="data" :title="data.heroTitle" :description="data.description" />
+			<Main :title="data.heroTitle" :description="data.description" />
 		</div>
 		<div
 			v-for="(item, i) in projectPages"

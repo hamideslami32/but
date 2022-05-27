@@ -1,6 +1,6 @@
 <template>
-	<div class="graphic" v-if="graphicData && graphicProjects">
-		<ShareTitle :description="graphicData && graphicData.heroTitle" :page-title="pageTitle" />
+	<div class="graphic">
+		<ShareTitle :description="graphicData.heroTitle" :page-title="pageTitle" />
 		<div class="graphic__content">
 			<div
 				v-for="(item, index) in graphicProjects"
@@ -23,13 +23,15 @@ export default {
 			graphicData: null,
 		};
 	},
-	async created() {
-		const d = await this.$axios.$get(
+	async asyncData({$axios}) {
+		const d = await $axios.$get(
 			"/graphic?populate[graphicProjects][populate]=*"
 		);
 		const { graphicProjects, ...rest } = d.data?.attributes;
-		this.graphicData = rest;
-		this.graphicProjects = graphicProjects;
+		return {
+			graphicData: rest,
+			graphicProjects: graphicProjects
+		};
 	},
 };
 </script>

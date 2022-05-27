@@ -1,5 +1,5 @@
 <template>
-	<div class="research" v-if="researchData">
+	<div class="research">
 		<ShareTitle :description="researchData.heroTitle" :page-title="pageTitle" />
 		<div class="research__content m-auto container">
 			<div
@@ -29,11 +29,13 @@ export default {
 			sections: null,
 		};
 	},
-	async created() {
-		const d = await this.$axios.$get("/research?populate[sections][populate]=*");
+	async asyncData({ $axios }) {
+		const d = await $axios.$get("/research?populate[sections][populate]=*");
 		const { sections, ...rest } = d.data?.attributes;
-		this.researchData = rest;
-		this.sections = sections;
+		return {
+			researchData: rest,
+			sections,
+		};
 	},
 };
 </script>
