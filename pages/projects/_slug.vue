@@ -112,9 +112,14 @@
 
 <script>
 export default {
-	asyncData({ payload }) {
+	async asyncData({payload, $axios, route}) {
 		if (payload) return { projectData: payload };
-		else return { projectData: {} };
+		else {
+			const t = await $axios.get(
+				`https://valimohebbi.com/strapi/api/projects?filters[slug][$eq]=${route.params.slug}&populate[media][populate]=*&populate[sections][populate]=*&populate[secondMedia][populate]=*&populate[secondSections][populate]=*&populate[thirdMedia][populate]=*&populate[projectPhotoText][populate]=*&populate[album][populate]=*&populate[otherProjects][populate]=*`
+			);
+			return { projectData: t.data.data[0].attributes };
+		}
 	},
 	mounted() {
 		console.log("this.projectData", this.projectData);

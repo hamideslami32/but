@@ -2,6 +2,7 @@
 const axios = require("axios");
 export default {
 	ssr: false,
+	target: "static",
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
 		title: "Vali Mohebbi",
@@ -38,10 +39,10 @@ export default {
 					let projects = response.data.data.map((project) => {
 						return {
 							route: "/projects/" + project.attributes.slug,
-							payload: project.attributes,
+							payload: "test",
 						};
 					});
-					return [...projects];
+					return projects;
 				});
 		},
 	},
