@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-undef
+const axios = require("axios");
 export default {
 	ssr: false,
 	// Global page headers: https://go.nuxtjs.dev/config-head
@@ -24,6 +26,24 @@ export default {
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
 
+	generate: {
+		// create an array of all routes for generating static pages
+		// careful, this is only used by `npm run generate`. These must match SPA mode routes
+		routes: function () {
+			return axios
+				.get("https://valimohebbi.com/strapi/api/projects")
+				.then((response) => {
+					let projects = response.data.data.map((project) => {
+						return {
+							route: "/projects/" + project.attributes.slug,
+							payload: project,
+						};
+					});
+					return [...projects];
+				});
+		},
+	},
+
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		"@nuxtjs/style-resources",
@@ -47,7 +67,7 @@ export default {
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		baseURL: "https://valimohebbi.com/strapi/api"
+		baseURL: "https://valimohebbi.com/strapi/api",
 	},
 
 	// PWA module configuration: https://go.nuxtjs.dev/pwa
