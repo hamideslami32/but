@@ -1,10 +1,16 @@
 <template>
-  <a href="" class="main-btn">view project</a>
+  <a :href="link" class="main-btn">view project</a>
 </template>
 
 <script>
 export default {
 	name: "ShareBtn",
+	props: {
+		link: {
+			type: String,
+			default: "/",
+		},
+	}
 };
 </script>
 
