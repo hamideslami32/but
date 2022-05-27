@@ -117,22 +117,26 @@ export default {
 			projectData: null,
 		};
 	},
-	async created() {
-		if (this.$route.params.slug) {
-			const d = await this.$axios.$get(
-				`/projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
-			populate[sections][populate]=*&
-			populate[secondMedia][populate]=*&
-			populate[secondSections][populate]=*&
-			populate[thirdMedia][populate]=*&
-			populate[projectPhotoText][populate]=*&
-			populate[album][populate]=*&
-			populate[otherProjects][populate]=*
-			`
-			);
-			this.projectData = d.data[0]?.attributes;
-		}
+	async asyncData({ payload }) {
+		if (payload) return { projectData: payload };
+		else return false;
 	},
+	// async created() {
+	// 	if (this.$route.params.slug) {
+	// 		const d = await this.$axios.$get(
+	// 			`/projects?filters[slug][$eq]=${this.$route.params.slug}&populate[media][populate]=*&
+	// 		populate[sections][populate]=*&
+	// 		populate[secondMedia][populate]=*&
+	// 		populate[secondSections][populate]=*&
+	// 		populate[thirdMedia][populate]=*&
+	// 		populate[projectPhotoText][populate]=*&
+	// 		populate[album][populate]=*&
+	// 		populate[otherProjects][populate]=*
+	// 		`
+	// 		);
+	// 		this.projectData = d.data[0]?.attributes;
+	// 	}
+	// },
 };
 </script>
 

@@ -31,11 +31,14 @@ export default {
 		// careful, this is only used by `npm run generate`. These must match SPA mode routes
 		routes: function () {
 			return axios
-				.get("https://valimohebbi.com/strapi/api/projects")
+				.get(
+					"https://valimohebbi.com/strapi/api/projects?populate[media][populate]=*&populate[sections][populate]=*&populate[secondMedia][populate]=*&populate[secondSections][populate]=*&populate[thirdMedia][populate]=*&populate[projectPhotoText][populate]=*&populate[album][populate]=*&populate[otherProjects][populate]=*"
+				)
 				.then((response) => {
 					let projects = response.data.data.map((project) => {
 						return {
 							route: "/projects/" + project.attributes.slug,
+							payload: project,
 						};
 					});
 					return [...projects];
