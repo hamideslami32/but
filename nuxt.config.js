@@ -36,7 +36,6 @@ export default {
 					let projects = response.data.data.map((project) => {
 						return {
 							route: "/projects/" + project.attributes.slug,
-							payload: project,
 						};
 					});
 					return [...projects];
