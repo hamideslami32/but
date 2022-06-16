@@ -56,6 +56,7 @@ export default {
   height: 530px;
   background-color: #fff;
   // padding: 90px 140px 0 140px;
+		margin-top: 64px;
   display: flex;
   flex-direction: column;
   &__title {
