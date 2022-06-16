@@ -107,14 +107,14 @@ export default {
 			margin-left: 0;
 		}
 		&__text {
-			width: inherit;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			margin-left: 0;
 			@media screen and (max-width: 768px) {
 				padding-left: 53px;
-				width: calc(100% - 73px);
+				width: calc(100% - 20px);
 			}
 
 			&__index {
