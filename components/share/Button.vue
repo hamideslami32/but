@@ -26,7 +26,7 @@ export default {
   &:hover {
     background: #d1d1d1;
     // border: none;
-    transition: 1.5s ease-in-out;
+    transition: .5s ease-in-out;
   }
 }
 </style>
