@@ -6,10 +6,10 @@
 				<div class="about-us__container__pet__description">
 					<div class="about-us__container__pet__description__first-text">
 						<span>{{ hero.firstText }}</span>
-						<img src="/font/arrow-back.svg" alt="arrow" />
+						<!-- <img src="/font/arrow-back.svg" alt="arrow" /> -->
 					</div>
 				</div>
-				<div class="about-us__container__avatar__image">
+				<div class="about-us__container__pet__image">
 					<img
 						:src="`https://valimohebbi.com/strapi${hero.firstImage.data.attributes.url}`"
 						alt="avatar"
@@ -103,16 +103,18 @@ export default {
 				color: #333;
 				flex-direction: column;
 				&__first-text {
-					width: 80%;
 					display: flex;
 					align-items: center;
+					margin-left: calc(100% - (1536px / 2));
+					@media screen and (max-width: 1536px) {
+						margin-left: 32px;
+					}
 					img {
 						transform: rotate(-90deg);
 					}
 				}
 				span {
-					width: 80%;
-					font-size: 50px;
+					font-size: 54px;
 					font-weight: 500;
 					position: relative;
 				}
@@ -136,17 +138,22 @@ export default {
 				align-items: center;
 				color: #fff;
 				span {
-					font-size: 50px;
+					// margin-right: calc(100% - (1536px / 2));
+					// @media screen and (max-width: 1536px) {
+					// 	margin-right: 32px;
+					// }
+
+					font-size: 80px;
 					font-weight: 500;
 				}
 			}
 			&__image {
 				width: 50%;
-				height: 100%;
+				// height: ;
 				img {
 					width: 100%;
 					object-fit: cover;
-					height: auto;
+					height: 100%;
 				}
 			}
 		}
@@ -154,7 +161,7 @@ export default {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			margin: 200px 0 150px 0;
+			margin: 64px 0 64px 0;
 			width: 60%;
 			&__title {
 				font-size: 56px;
@@ -175,7 +182,7 @@ export default {
 				font-size: 56px;
 				font-weight: 500;
 				color: #333;
-				margin: 0 0 130px 0;
+				margin: 64px 0 32px 0;
 				width: 60%;
 			}
 			&__content {
@@ -214,16 +221,11 @@ export default {
 		}
 	}
 }
-@media only screen and (max-width: 1264px) {
+@media only screen and (max-width: 1536px) {
 	.about-us {
 		&__container {
 			&__pet {
-				height: 700px;
-				&__description {
-					span {
-						font-size: 30px;
-					}
-				}
+				height: auto;
 				&__image {
 					width: 50%;
 					background-image: url("/image/goat/ray-aucott-xB0e8bDV4ww-unsplash.png");
@@ -236,11 +238,6 @@ export default {
 				display: flex;
 				width: 100%;
 				height: 300px;
-				&__description {
-					span {
-						font-size: 30px;
-					}
-				}
 			}
 		}
 	}
@@ -251,20 +248,21 @@ export default {
 		&__container {
 			&__pet {
 				flex-direction: column-reverse;
-				height: 1200px;
+				height: auto;
 				&__description {
 					width: 100%;
-					justify-content: flex-start;
-					height: 30%;
-					padding-left: 12px;
-					span {
+					height: 294px;
+					justify-content: center;
+					&__first-text {
 						width: 60%;
-						font-size: 40px;
+						span {
+							font-size: 20px;
+						}
 					}
 				}
 				&__image {
-					width: 100%;
-					height: 70%;
+					height: 375px;
+					width: 100%;	
 					background-image: url("/image/goat/ray-aucott-xB0e8bDV4ww-unsplash.png");
 					background-position: center;
 					background-size: cover;
@@ -274,17 +272,23 @@ export default {
 			&__avatar {
 				flex-direction: column-reverse;
 				width: 100%;
-				height: 900px;
+				height: auto;
 				&__description {
 					width: 100%;
-					height: 50%;
-					span {
-						font-size: 54px;
+					height: 204px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					&__first-text {
+						width: 100%;
+						span {
+							font-size: 54px;
+						}
 					}
 				}
 				&__image {
 					width: 100%;
-					height: 50%;
+					height: 204px;
 					img {
 						width: 100%;
 						height: 100% !important;
@@ -292,20 +296,21 @@ export default {
 				}
 			}
 			&__info {
-				margin: 15px 0 60px 0;
+				margin: 32px 0 64px;
 				width: 95%;
 				&__title {
 					font-size: 34px;
 				}
 				&__desc {
 					font-size: 14px;
-					margin-top: 22px;
+					margin-top: 16px;
+					word-break: break-all;
 				}
 			}
 			&__cv {
 				span {
 					font-size: 34px;
-					margin: 0 0 20px 0;
+					margin: 0 0 32px 0;
 					width: 95%;
 				}
 				&__content {
@@ -337,7 +342,7 @@ export default {
 			&__avatar {
 				flex-direction: column-reverse;
 				width: 100%;
-				height: 500px;
+				// height: 500px;
 			}
 		}
 	}
