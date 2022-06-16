@@ -205,12 +205,7 @@ export default {
 					align-items: center;
 					transition: 0.2s ease-in;
 					&:hover {
-						background: linear-gradient(
-							90deg,
-							rgba(83, 7, 7, 1) 0%,
-							rgba(112, 17, 17, 1) 35%,
-							rgba(217, 21, 21, 1) 100%
-						);
+						background: #d1d1d1;
 						border: none;
 						color: #fff;
 					}

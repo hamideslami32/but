@@ -24,7 +24,7 @@ export default {
   align-items: center;
   
   &:hover {
-    background: linear-gradient(45deg, rgba(184,67,67,1) 0%, rgba(243,221,27,1) 60%);
+    background: #d1d1d1;
     // border: none;
     transition: 1.5s ease-in-out;
   }

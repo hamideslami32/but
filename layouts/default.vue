@@ -24,8 +24,9 @@ export default {
   position: relative;
   &__header {
     z-index: 1;
-    position: absolute;
+    position: sticky;
     top: 0;
+				background: white;
     width: 100%;
     color: #0466c8b8;
   }

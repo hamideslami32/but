@@ -2,20 +2,24 @@
 	<div class="project-container" :style="backgroundImage">
 		<div v-if="item.isNew" class="badge">NEW</div>
 		<div
-			class="project-container__content"
-			:style="backgroundColor"
-			@mouseleave="handlerHover"
-			@mouseenter="handlerHover"
+			:style="color"
+			class="project-container__content container"
+			@mouseleave="handlerHover(false)"
+			@mouseenter="handlerHover(true)"
 		>
 			<div ref="title" class="project-container__content__text">
-				<span class="project-container__content__text__index">{{ id }}</span>
+				<!-- <span class="project-container__content__text__index">{{ id }}</span> -->
 				<span class="project-container__content__text__title">{{
 					item.title
 				}}</span>
 				<span class="project-container__content__text__description mb-4">{{
 					item.description
 				}}</span>
-				<ShareButton title="view project" :href="`/projects/${item.link ? item.link.link : '/'}`" />
+				<ShareButton
+					class="project-container__content__text__button"
+					title="view project"
+					:href="`/projects/${item.link ? item.link.link : '/'}`"
+				/>
 			</div>
 		</div>
 	</div>
@@ -50,35 +54,15 @@ export default {
 				"background-image": `url(https://valimohebbi.com/strapi${this.item?.bgImage?.data?.attributes?.url})`,
 			};
 		},
-		backgroundColor() {
-			if (this.type === "home") {
-				if (this.isHovered) {
-					return {
-						"background-color": this.item.color,
-					};
-				} else {
-					return {
-						"background-color": `${this.item.color}D9`,
-					};
-				}
-			} else if (this.type === "graphic") {
-				if (this.isHovered) {
-					return {
-						"background-color": this.item.color,
-						width: "100%",
-					};
-				} else {
-					return {
-						"background-color": `${this.item.color}D9`,
-						width: "50%",
-					};
-				}
-			} else return "";
+		color() {
+			return `
+				color: ${this.item?.color} 
+			`;
 		},
 	},
 	methods: {
-		handlerHover() {
-			this.isHovered = !this.isHovered;
+		handlerHover(val) {
+			this.isHovered = val;
 		},
 	},
 };
@@ -94,7 +78,10 @@ export default {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	.badge {
 		width: 70px;
 		height: 30px;
@@ -110,36 +97,48 @@ export default {
 		font-size: 14px;
 	}
 	&__content {
-		width: 50%;
-		height: 100%;
-		display: flex;
-		align-items: center;
 		transition: 0.5s ease-in-out;
-			// position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: 153px;
+		@media screen and (max-width: 768px) {
+			align-items: center;
+			margin-left: 0;
+		}
 		&__text {
-			height: 100%;
+			width: inherit;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			margin-left: 18%;
-			// position: absolute;
-			// left: 40%
-			// margin: auto;
+			justify-content: flex-start;
+			margin-left: 0;
+			@media screen and (max-width: 768px) {
+				padding-left: 53px;
+				width: calc(100% - 73px);
+			}
+
 			&__index {
 				font-size: 5rem;
 				font-weight: 400;
 			}
 			&__title {
-				font-size: 2.5rem;
+				font-size: 60px;
 				font-weight: 600;
+				@media screen and (max-width: 768px) {
+					font-size: 44px;
+				}
 			}
-		}
-	}
-}
-@media only screen and (max-width: 960px) {
-	.project-container {
-		&__content {
-			width: 100% !important;
+			&__description {
+				width: 100%;
+				font-size: 20px;
+				font-weight: 400;
+				@media screen and (max-width: 768px) {
+					font-size: 14px;
+				}
+			}
+			&__button {
+				font-size: 18px;
+			}
 		}
 	}
 }
