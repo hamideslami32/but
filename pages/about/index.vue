@@ -213,7 +213,6 @@ export default {
 					transition: 0.2s ease-in;
 					&:hover {
 						background: #d1d1d1;
-						border: none;
 						color: #fff;
 					}
 				}
