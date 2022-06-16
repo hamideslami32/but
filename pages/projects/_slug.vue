@@ -2,7 +2,7 @@
 	<div class="project">
 		<div class="container mx-auto">
 			<div class="project__header">
-				<a href="/"><i class="ri-arrow-left-line"></i>Back to Home</a>
+				<a href="/"><i class="ri-arrow-left-line mr-1"></i>Back to Home</a>
 				<h1>{{ projectData.title }}</h1>
 				<p>
 					{{ projectData.description }}
@@ -95,8 +95,8 @@
 
 		<div class="container mx-auto mb-16" v-if="projectData.otherProjects.length">
 			<div class="project__footprint">
-				<span> <i class="ri-arrow-right-line"></i>&nbsp; Other Projects: </span>
-				<ul style="margin-left: 48px">
+				<span><i class="ri-arrow-right-line"></i>&nbsp; Other Projects: </span>
+				<ul>
 					<li
 						v-for="(project, index) in projectData.otherProjects"
 						:key="`project-${index}`"
@@ -112,7 +112,7 @@
 
 <script>
 export default {
-	async asyncData({payload, $axios, route}) {
+	async asyncData({ payload, $axios, route }) {
 		if (payload) return { projectData: payload };
 		else {
 			const t = await $axios.get(
@@ -121,17 +121,19 @@ export default {
 			return { projectData: t.data.data[0].attributes };
 		}
 	},
-	mounted() {
-		console.log("this.projectData", this.projectData);
-	},
 };
 </script>
 
 <style lang="scss" scoped>
 .project {
+	& img {
+		object-fit: cover;
+	}
 	&__header {
-		height: 610px;
-		padding-top: 170px;
+		padding: 65px 16px 0 41px;
+		@media screen and (max-width: 768px) {
+			padding: 32px 16px 0;
+		}
 		a {
 			font-size: 18px;
 			line-height: 24px;
@@ -149,12 +151,19 @@ export default {
 			font-size: 60px;
 			font-weight: bold;
 			color: #333;
+
+			@media screen and (max-width: 768px) {
+				font-size: 24px;
+			}
 		}
 		p {
-			margin-top: 55px;
+			margin-bottom: 32px;
 			font-size: 20px;
 			color: #707070;
 			text-align: justify;
+			@media screen and (max-width: 768px) {
+				font-size: 14px;
+			}
 		}
 	}
 	&__video {
@@ -184,10 +193,14 @@ export default {
 				font-size: 20px;
 				color: #707070;
 				text-align: justify;
+				@media screen and (max-width: 768px) {
+					font-size: 14px;
+				}
 			}
 		}
 		@media only screen and (max-width: 960px) {
 			grid-template-columns: auto;
+			grid-auto-rows: auto;
 		}
 	}
 	&__images {
@@ -206,17 +219,27 @@ export default {
 	&__content {
 		padding-top: 60px;
 		padding-bottom: 60px;
+		@media screen and (max-width: 768px) {
+			padding-top: 32px;
+			padding-bottom: 32px;
+		}
 		h2 {
 			font-size: 60px;
 			font-weight: bold;
 			color: #333;
 			margin-top: 12px;
+			@media screen and (max-width: 768px) {
+				font-size: 24px;
+			}
 		}
 		p {
 			font-size: 20px;
 			color: #707070;
 			margin-top: 12px;
 			text-align: justify;
+			@media screen and (max-width: 768px) {
+				font-size: 14px;
+			}
 		}
 	}
 	&__big-image {
@@ -246,11 +269,17 @@ export default {
 				font-size: 60px;
 				font-weight: bold;
 				color: #333;
+				@media screen and (max-width: 768px) {
+					font-size: 24px;
+				}
 			}
 			p {
 				margin-top: 12px;
 				font-size: 20px;
 				color: #707070;
+				@media screen and (max-width: 768px) {
+					font-size: 14px;
+				}
 			}
 		}
 		&--right {
@@ -272,7 +301,7 @@ export default {
 			&__content {
 				width: 100%;
 			}
-			&--right {
+			&, &--right {
 				.project__image-quote__content {
 					padding: 20px;
 				}
@@ -281,11 +310,15 @@ export default {
 	}
 	&__album {
 		h3 {
+			padding: 16px 0;
 			margin-top: 130px;
 			margin-bottom: 60px;
 			font-size: 40px;
 			font-weight: bold;
 			color: #333;
+			@media screen and (max-width: 768px) {
+				margin: 32px 0 12px 0;
+			}
 		}
 		&__images {
 			display: grid;
@@ -329,6 +362,7 @@ export default {
 		}
 	}
 	&__footprint {
+		padding: 0 16px;
 		span {
 			font-size: 18px;
 			font-weight: 300;

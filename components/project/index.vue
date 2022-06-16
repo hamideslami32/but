@@ -1,12 +1,7 @@
 <template>
 	<div class="project-container" :style="backgroundImage">
 		<div v-if="item.isNew" class="badge">NEW</div>
-		<div
-			:style="color"
-			class="project-container__content container"
-			@mouseleave="handlerHover(false)"
-			@mouseenter="handlerHover(true)"
-		>
+		<div :style="color" class="project-container__content container">
 			<div ref="title" class="project-container__content__text">
 				<!-- <span class="project-container__content__text__index">{{ id }}</span> -->
 				<span class="project-container__content__text__title">{{
@@ -17,8 +12,7 @@
 				}}</span>
 				<ShareButton
 					class="project-container__content__text__button"
-					title="view project"
-					:href="`/projects/${item.link ? item.link.link : '/'}`"
+					:href="`/${item.link ? 'projects/' + item.link.link : ''}`"
 				/>
 			</div>
 		</div>
@@ -42,11 +36,6 @@ export default {
 			type: String,
 			default: "",
 		},
-	},
-	data() {
-		return {
-			isHovered: false,
-		};
 	},
 	computed: {
 		backgroundImage() {
@@ -81,6 +70,11 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media screen and (max-width: 768px) {
+		height: 377px;
+		width: 100%;
+		background-size: cover;
+	}
 
 	.badge {
 		width: 70px;
@@ -95,6 +89,10 @@ export default {
 		justify-content: center;
 		align-items: center;
 		font-size: 14px;
+		@media screen and (max-width: 768px) {
+			top: 30px;
+			right: 30px;
+		}
 	}
 	&__content {
 		transition: 0.5s ease-in-out;
