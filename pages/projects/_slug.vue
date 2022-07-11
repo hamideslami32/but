@@ -116,7 +116,7 @@ export default {
 		if (payload) return { projectData: payload };
 		else {
 			const t = await $axios.get(
-				`https://valimohebbi.com/strapi/api/projects?filters[slug][$eq]=${route.params.slug}&populate[media][populate]=*&populate[sections][populate]=*&populate[secondMedia][populate]=*&populate[secondSections][populate]=*&populate[thirdMedia][populate]=*&populate[projectPhotoText][populate]=*&populate[album][populate]=*&populate[otherProjects][populate]=*`
+				`/projects?filters[slug][$eq]=${route.params.slug}&populate[media][populate]=*&populate[sections][populate]=*&populate[secondMedia][populate]=*&populate[secondSections][populate]=*&populate[thirdMedia][populate]=*&populate[projectPhotoText][populate]=*&populate[album][populate]=*&populate[otherProjects][populate]=*`
 			);
 			return { projectData: t.data.data[0].attributes };
 		}
@@ -301,7 +301,8 @@ export default {
 			&__content {
 				width: 100%;
 			}
-			&, &--right {
+			&,
+			&--right {
 				.project__image-quote__content {
 					padding: 20px;
 				}

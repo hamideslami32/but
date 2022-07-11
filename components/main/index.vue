@@ -1,11 +1,12 @@
 <template>
-	<div class="main">
-		<div class="main__content  container m-auto">
-			<span class="main__content__title">{{title}}</span>
+	<div
+		:style="{ backgroundImage: `url(https://valimohebbi.com/strapi${bgImg})` }"
+		class="main"
+	>
+		<div class="main__content container m-auto">
+			<span class="main__content__title">{{ title }}</span>
 			<div class="main__content__description">
-				<span
-					>{{description}}</span
-				>
+				<span>{{ description }}</span>
 			</div>
 		</div>
 	</div>
@@ -20,6 +21,10 @@ export default {
 		description: {
 			required: true,
 		},
+		bgImg: {
+			type: String,
+			required: true,
+		},
 	},
 };
 </script>
@@ -31,7 +36,6 @@ export default {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
-	background-image: url("/image/homepage-desktop.png");
 	background-position: center;
 	background-size: cover;
 	&__content {

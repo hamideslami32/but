@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
 		<div class="main__content">
-			<Main :title="data.heroTitle" :description="data.description" />
+			<Main :title="data.heroTitle" :description="data.description" :bgImg="bgImage" />
 		</div>
 		<div
 			v-for="(item, i) in projectPages"
@@ -20,14 +20,21 @@ export default {
 		return {
 			data: null,
 			projectPages: null,
+			bgImage: "",
 		};
 	},
 	async asyncData({ $axios }) {
-		const d = await $axios.$get("/home?populate[projects][populate]=*");
+		const d = await $axios.$get(
+			"home?populate[projects][populate]=*&populate[background]=*"
+		);
 		const { projects, ...rest } = d.data?.attributes;
+		const { url: bgImage } =
+			d.data?.attributes.background.data.attributes;
+
 		return {
 			data: rest,
-			projectPages: projects
+			projectPages: projects,
+			bgImage,
 		};
 	},
 };
